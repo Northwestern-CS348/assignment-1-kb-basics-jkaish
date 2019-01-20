@@ -13,7 +13,6 @@ class KBTest(unittest.TestCase):
         for item in data:
             if isinstance(item, Fact):
                 self.KB.kb_assert(item)
-        
 
     def test1(self):
         ask1 = read.parse_input("fact: (color bigbox red)")
