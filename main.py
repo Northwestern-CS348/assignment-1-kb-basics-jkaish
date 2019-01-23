@@ -52,7 +52,12 @@ class KBTest(unittest.TestCase):
         self.assertEqual(str(answer[3]), "?X : pyramid2, ?Y : green")
         self.assertEqual(str(answer[4]), "?X : pyramid3, ?Y : red")
         self.assertEqual(str(answer[5]), "?X : pyramid4, ?Y : red")
-        
+
+    def test6(self):
+        for ii, fact in enumerate(self.KB.facts):
+            for other_fact in self.KB.facts[ii+1:]:
+                self.assertNotEqual(fact, other_fact, fact)
+
 
 if __name__ == '__main__':
     unittest.main()

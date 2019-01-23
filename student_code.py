@@ -25,9 +25,11 @@ class KnowledgeBase(object):
         """
         # print("Asserting {!r}".format(fact))
         if isinstance(fact, Fact):
-            self.facts.append(fact)
+            if fact not in self.facts:
+                self.facts.append(fact)
         elif isinstance(fact, Rule):
-            self.rules.append(fact)
+            if fact not in self.rules:
+                self.rules.append(fact)
 
         
     def kb_ask(self, fact):
