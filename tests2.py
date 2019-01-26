@@ -37,6 +37,11 @@ class KBTest(unittest.TestCase):
         answer = self.KB.kb_ask(ask1)
         self.assertFalse(answer)
 
+    def test4(self):
+        ask1 = read.parse_input("fact: (dead Nosliw)")
+        answer = self.KB.kb_ask(ask1)
+        self.assertFalse(answer)
+
 
 
 if __name__ == '__main__':
